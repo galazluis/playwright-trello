@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Create .env file
-        run: |
+      run: |
           touch .env
           echo BASE_URL=${{ secrets.BASE_URL }} >> .env
           echo EMAIL=${{ secrets.EMAIL }} >> .env
