@@ -7,6 +7,7 @@
     "cards": "playwright test --grep='Cards front-end' --headed",
     "cards-chromium": "playwright test --grep='Cards front-end' --project='chromium' --headed",
     "cards-headless": "playwright test --grep='Cards front-end'",
+    "cards-headless-chromium": "playwright test --grep='Cards front-end' --project='chromium'",
     "cards-html": "playwright test --grep='Cards front-end' --reporter=line,html --project='chromium'",
     "cards-allure": "playwright test --grep='Cards front-end' --project='chromium' --reporter=line,allure-playwright",
     "cards-debug": "playwright test --debug --grep='Cards front-end' --project='chromium'",
