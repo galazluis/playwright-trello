@@ -1,6 +1,6 @@
 # <img src="https://playwright.dev/img/playwright-logo.svg" width="100" height="100"> Front-End, API and Visual Automation using Playwright
 ## Version
-v1.0
+1.0 
 
 ## Introduction
 
@@ -8,14 +8,14 @@ The purpose of this project is to provide a real world template to perform Front
 
 ## Tech Stack
 
-- TypeScript
 - Playwright
+- TypeScript
 - Allure
 - DotEnv
 
 ## Project Structure
 ```
-├── API            # Main Page Object Model folder.
+├── API                     # Main API Testing folder.
 │   ├── classes             # All the API classes and methods.
 │   ├── data                # Data provider files.
 │   ├── tests               # API Tests are located here.
@@ -43,8 +43,8 @@ The purpose of this project is to provide a real world template to perform Front
 ## Project Setup
 
 1. Clone this repository.
-2. Go to the repository folder.
-3. Run the ```npm install``` command on the terminal.
+2. Navigate to the project folder using the terminal.
+3. Run the ```npm install``` command.
 4. Create a .env file at root level with the following variables:
 ```
 EMAIL=your@email.com
@@ -54,9 +54,9 @@ API_BASE_URL=https://api.trello.com/1/
 API_KEY=your_api_key
 API_TOKEN=your_token
 ```
-5. Create a new Trello account.
-6. Create new board called "Test Board".
-7. Make sure the board has the following columns: To Do, Doing, Done.
+5. Create a new Trello account (in case you don't have one already).
+6. Create a new board called "Test Board".
+7. Make sure the board has the following Lists: To Do, Doing, Done.
 
 ## Dependencies
 - @playwright/test
