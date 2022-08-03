@@ -4,3 +4,4 @@ playwright-report/
 allure-report/
 allure-results/
 .env
+trello-auth.json
