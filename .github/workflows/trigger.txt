@@ -1,1 +1,1 @@
-Simple Github Actions Trigger.
+Simple Github Actions Trigger
