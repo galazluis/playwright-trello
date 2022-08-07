@@ -4,27 +4,60 @@
 
 ## Introduction
 
-The purpose of this project is to provide a real world template to perform Front-End, API and Visual testing using Playwright.
+The purpose of this project is to provide a real world template to perform Front-End, API and Visual testing using Playwright with TypeScript.
+
+###### Coverage
+This project covers the following scenarios and practices:
+
+###### Automation
+  - Use of Page Object Model
+  - Use of Data Provider
+  - Use of Environment Variables
+  - Use of Hooks
+  - Multi-browser execution
+  - Parallel execution
+  - Test filtering
+  - Headless/headed mode execution
+  - Debug mode
+  - Record and Play(Playwright's Code Generator) 
+###### API Testing (REST)
+  - OAuth authentication
+  - GET, POST and DELETE methods
+  - Query Parameters
+  - Response code validation
+  - Response body validation
+  - Serial execution(Playwright's Serial Mode)
+###### Front-End Testing
+  - E2E Testing
+  - Atlassian Login
+  - Login skip(using Playwright's Storage State)
+  - HTTP Response interception
+  - Post-test cleanup through API
+  - Visual testing
+    - Web-first assertions(using Playwright's smart retry)
+    - Element masking(omit elements from the comparison)
+###### CI/CD
+  - GitHub Actions implementation
+###### Reporters
+  - HTML(Playwright)
+  - Allure  
 
 ## Tech Stack
 
 - Playwright
 - TypeScript
-- Allure
-- DotEnv
 
 ## Project Structure
 ```
+├── .github/workflows       # Folder containing the GitHub Actions files.
 ├── API                     # Main API Testing folder.
 │   ├── classes             # All the API classes and methods.
 │   ├── data                # Data provider files.
-│   ├── tests               # API Tests are located here.
-│   └── ...                 
+│   └── tests               # API Tests are located here.                 
 ├── page-objects            # Main Page Object Model folder for the Front-End tests.
 │   ├── data                # Data provider files.
 │   ├── pages               # Page Objects.
-│   ├── tests               # Front-End Tests are located here.
-│   └── ...
+│   └── tests               # Front-End Tests are located here.
 └── .gitignore
 └── README.md
 └── package-lock.json
@@ -58,19 +91,33 @@ API_TOKEN=your_token
 6. Create a new board called "Test Board".
 7. Make sure the board has the following Lists: To Do, Doing, Done.
 
+## GitHub Actions
+Make sure to create Actions Secrets for each environment variable stated above. This is used to create a .env file for the GitHub Actions executions.
+
+All the actions are defined in the "playwright.yml" file. It performs the following actions in order:
+
+```
+└── API                     # It executes all the API tests for Cards and Boards.
+     └── E2E                # It executes all the front-end tests for Cards on Chromium:headless mode.
+```
+
+__*The E2E testing job requires the API job to run successfully first.__
+
+In order to trigger the actions: perform a new push/pull-request on the main/master branch. 
+
 ## Dependencies
 - @playwright/test
 - allure-playwright
 - dotenv
 
 ## Scripts
-- ```cards```: Runs all the front-end cards tests on chromium, firefox and webkit: headed mode.
-- ```cards-chromium```: Runs all the front-end cards tests on chromium: headed mode.
-- ```cards-headless```: Runs all the front-end cards tests on chromium: headless mode.
-- ```cards-allure```: Runs all the front-end cards tests on chromium: headless mode, using the Allure reporter.
-- ```cards-debug```: Runs all the front-end cards tests on chromium: debug mode.
-- ```cards-api```: Runs all the API cards tests.
-- ```boards-api```: Runs all the API boards tests.
+- ```cards```: Runs all the front-end Cards tests on chromium, firefox and webkit: headed mode.
+- ```cards-chromium```: Runs all the front-end Cards tests on chromium: headed mode.
+- ```cards-headless```: Runs all the front-end Cards tests on chromium: headless mode.
+- ```cards-allure```: Runs all the front-end Cards tests on chromium: headless mode, using the Allure reporter.
+- ```cards-debug```: Runs all the front-end Cards tests on chromium: debug mode.
+- ```cards-api```: Runs all the API Cards tests.
+- ```boards-api```: Runs all the API Boards tests.
 - ```api```: Runs all the API tests.
 - ```api-html```: Runs all the API tests using the HTML reporter
 - ```visual```: Runs all the Visual tests.
@@ -78,6 +125,5 @@ API_TOKEN=your_token
 - ```visual-allure```: Runs all the Visual tests on chromium: headed, using the Allure reporter.
 - ```code-gen```: Runs the code generator mode.
 - ```storage-state```: Runs the Storage State login test.
-- ```visual```: Runs all the Visual tests.
 - ```html```: Launches the generated HTML report.
 - ```allure```: Launches the generated Allure report.
