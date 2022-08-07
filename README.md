@@ -1,4 +1,4 @@
-# <img src="https://playwright.dev/img/playwright-logo.svg" width="100" height="100"> Front-End and API using Playwright
+# <img src="https://playwright.dev/img/playwright-logo.svg" width="100" height="100"> Front-End and API Automation using Playwright
 ## Version
 1.0 
 
