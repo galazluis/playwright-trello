@@ -68,9 +68,9 @@ This project covers the following scenarios and practices:
 
 ## Pre-requisites
 
-1. Node.js (latest version).
-2. VSCode (highly recommended).
-3. Playwright Test for VSCode Extension (highly recommended).
+1. [Node.js](https://nodejs.org/en/download/) (latest version).
+2. [VSCode](https://code.visualstudio.com/download) (highly recommended).
+3. [Playwright Test for VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) (highly recommended).
 
 
 ## Project Setup
@@ -87,12 +87,13 @@ API_BASE_URL=https://api.trello.com/1/
 API_KEY=your_api_key
 API_TOKEN=your_token
 ```
-5. Create a new Trello account (in case you don't have one already).
+5. Create a new [Trello account](https://trello.com/signup) (in case you don't have one already).
 6. Create a new board called "Test Board".
 7. Make sure the board has the following Lists: To Do, Doing, Done.
+8. Generate your [API Key and Token](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/) and place them in the .env file.
 
 ## GitHub Actions
-Make sure to create Actions Secrets for each environment variable stated above. This is used to create a .env file for the GitHub Actions executions.
+Make sure to create [Actions Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) for each environment variable stated above. This is used to create a .env file for the GitHub Actions executions.
 
 All the actions are defined in the "playwright.yml" file. It performs the following actions in order:
 
