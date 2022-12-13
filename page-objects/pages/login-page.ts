@@ -6,12 +6,14 @@ export class LoginPage{
     readonly emailInput: Locator
     readonly passwordInput: Locator
     readonly logInButton: Locator
+    readonly continueButton: Locator
     readonly logInWithAtlassianButton: Locator
 
     constructor(page: Page){
         this.page = page
         this.emailInput = page.locator('input[id="user"]') //locator built using regular CSS selectors
         this.passwordInput = page.locator('input[id="password"]') //locator built using regular CSS selectors
+        this.continueButton = page.locator('input[id="login"]') //locator built using regular CSS selectors
         this.logInWithAtlassianButton = page.locator('text=Log in with Atlassian') //locator built using Playwright's text selector
         this.logInButton = page.locator('#login-submit') //you can also use # for id's and . for classes to shorten the selectors lenght
     }
@@ -19,7 +21,7 @@ export class LoginPage{
     //in TypeScript we define both the parameters and their types for each function
     async logInWithAtlassian(email: string, password: string){
         await this.emailInput.fill(email)
-        await this.logInWithAtlassianButton.click()
+        await this.continueButton.click()
         await this.passwordInput.fill(password)
         await this.logInButton.click()
     }

@@ -25,6 +25,6 @@ export const CARD: Card = {
 }
 
 export const BOARD: Board = {
-    id: '6225301abf4491791b1c34d7',
+    id: '6398f2c66ffb2f04bbffedd3',
     name: 'Automation Board'
 }

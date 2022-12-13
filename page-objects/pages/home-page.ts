@@ -8,7 +8,7 @@ export class HomePage{
     constructor(page: Page){
         this.page = page
         this.testBoardLink = page.locator('[title="Test Board"]')
-        this.memberButton = page.locator('data-test-id=header-member-menu-button')//Playwright supports data-test-id natively
+        this.memberButton = page.locator('[data-testid="header-member-menu-button"]')//Playwright supports data-test-id natively
     }
 
 }
