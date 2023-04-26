@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { HomePage } from '../pages/home-page'
+import { HomePage } from '../page-objects/home-page'
 
 test.describe('@Login feature testing', () => {
     let homePage: HomePage
@@ -13,7 +13,7 @@ test.describe('@Login feature testing', () => {
     test.use({storageState: './trello-auth.json' })
 
     //this login test focuses on the testing of the Storage State feature to skip the authentication
-    test('As a user, I should be able to log into Trello by using Playwright\'s Storage State', async ({page}) => {
+    test('As a user, I want to log into Trello by using Playwright\'s Storage State', async ({page}) => {
         await page.goto('https://trello.com/galazautomation/boards') //notice how it navigates to the boards without loging in
         await expect(homePage.memberButton).toBeVisible()
     })

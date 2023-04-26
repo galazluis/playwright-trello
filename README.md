@@ -1,6 +1,6 @@
 # <img src="https://playwright.dev/img/playwright-logo.svg" width="100" height="100"> Front-End and API Automation using Playwright
 ## Version
-1.0 
+1.1 
 
 ## Introduction
 
@@ -54,9 +54,9 @@ This project covers the following scenarios and practices:
 │   ├── classes             # All the API classes and methods.
 │   ├── data                # Data provider files.
 │   └── tests               # API Tests are located here.                 
-├── page-objects            # Main Page Object Model folder for the Front-End tests.
+├── front-end               # Main Page Object Model folder for the Front-End tests.
 │   ├── data                # Data provider files.
-│   ├── pages               # Page Objects.
+│   ├── page-objects        # Page Objects.
 │   └── tests               # Front-End Tests are located here.
 └── .gitignore
 └── README.md
@@ -112,11 +112,14 @@ In order to trigger the actions: perform a new push/pull-request on the main/mas
 - dotenv
 
 ## Scripts
-- ```cards```: Runs all the front-end Cards tests on chromium, firefox and webkit: headed mode.
-- ```cards-chromium```: Runs all the front-end Cards tests on chromium: headed mode.
-- ```cards-headless```: Runs all the front-end Cards tests on chromium: headless mode.
-- ```cards-allure```: Runs all the front-end Cards tests on chromium: headless mode, using the Allure reporter.
-- ```cards-debug```: Runs all the front-end Cards tests on chromium: debug mode.
+- ```ui-mode```: Launches the UI Mode.
+- ```cards-fe```: Runs all the front-end Cards tests on chromium, firefox and webkit: headed mode.
+- ```cards-fe-headless```: Runs all the front-end Cards tests on chromium, firefox and webkit: headless mode.
+- ```cards-fe-chromium```: Runs all the front-end Cards tests on chromium: headed mode.
+- ```cards-fe-headless-chromium```: Runs all the front-end Cards tests on chromium: headedless mode.
+- ```cards-fe-chromium-html```: Runs all the front-end Cards tests on chromium: headless mode, using the Allure reporter.
+- ```cards-fe-chromium-allure```: Runs all the front-end Cards tests on chromium: headless mode, using the Allure reporter.
+- ```cards-fe-chromium-debug```: Runs all the front-end Cards tests on chromium: debug mode.
 - ```cards-api```: Runs all the API Cards tests.
 - ```boards-api```: Runs all the API Boards tests.
 - ```api```: Runs all the API tests.

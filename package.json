@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cards": "playwright test --headed --grep=CardsFe",
-    "cards-chromium": "playwright test --grep=CardsFe --project=chromium --headed",
-    "cards-headless": "playwright test --grep='Cards front-end'",
-    "cards-headless-chromium": "playwright test --grep=CardsFe --project=chromium",
-    "cards-html": "playwright test --grep='Cards front-end' --reporter=line,html --project='chromium'",
-    "cards-allure": "playwright test --grep='Cards front-end' --project='chromium' --reporter=line,allure-playwright",
-    "cards-debug": "playwright test --debug --grep='Cards front-end' --project='chromium'",
+    "ui-mode": "npx playwright test --ui",
+    "cards-fe": "playwright test --headed --grep=@Cards @fe",
+    "cards-fe-headless": "playwright test --grep='@Cards @fe'",
+    "cards-fe-chromium": "playwright test --grep=@Cards --project=chromium --headed",
+    "cards-fe-headless-chromium": "playwright test --grep=@Cards --project=chromium",
+    "cards-fe-chromium-html": "playwright test --grep='@Cards' --reporter=line,html --project='chromium'",
+    "cards-fe-chromium-allure": "playwright test --grep='@Cards' --project='chromium' --reporter=line,allure-playwright",
+    "cards-fe-chromium-debug": "playwright test --debug --grep='@Cards' --project='chromium'",
     "cards-api": "playwright test --project='api' --grep='@Cards @Api'",
     "boards-api": "playwright test --grep='@Boards @api' --project='api' --headed",
     "api": "playwright test --project=api",
@@ -21,14 +22,13 @@
     "code-gen": "playwright codegen --save-storage=trello-auth.json https://trello.com/ --browser=firefox",
     "storage-state": "playwright test --grep='Storage State'",
     "html": "playwright show-report",
-    "allure": "allure generate ./allure-results --clean && allure open ./allure-report",
-    "launch-jenkins": "java -jar jenkins.war -httpPort=8080 --enable-future-java"
+    "allure": "allure generate ./allure-results --clean && allure open ./allure-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.22.2",
+    "@playwright/test": "^1.32.3",
     "allure-playwright": "^2.0.0-beta.15",
     "dotenv": "^16.0.0"
   }
